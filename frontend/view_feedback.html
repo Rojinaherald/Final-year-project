@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Background Styling */
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Feedback Container */
+        .feedback-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        .feedback-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Feedback Section */
+        #feedback-section {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #feedback-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        #feedback-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Message if empty */
+        #feedback-section .no-feedback {
+            font-style: italic;
+            color: #888;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Feedback</h1>
+        <div id="feedback-section">
+            <!-- Example static feedback message -->
+            <p>Great work on the project! Keep it up!</p>
+            <p>Your code structure is very well organized and easy to follow.</p>
+            <!-- If no feedback, show the no-feedback message -->
+            <p class="no-feedback">No feedback available at the moment.</p>
+        </div>
+    </div>
+</body>
+</html>
