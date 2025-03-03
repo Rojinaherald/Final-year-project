@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chat System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">💬 Messaging System</div>
+        <div id="chat-box" class="chat-box">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="receiver_id" placeholder="Receiver ID" required>
+            <textarea id="message" placeholder="Type your message..."></textarea>
+            <button id="sendMessage">📩 Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("sendMessage").addEventListener("click", function() {
+            let message = document.getElementById("message").value.trim();
+            let chatBox = document.getElementById("chat-box");
+
+            if (message !== "") {
+                let messageDiv = document.createElement("div");
+                messageDiv.classList.add("message", "sent");
+                messageDiv.innerHTML = `<span>${message}</span>`;
+                chatBox.appendChild(messageDiv);
+
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
+                document.getElementById("message").value = ""; // Clear input
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <div class="file-container">
+        <div class="file-header">📁 File Sharing</div>
+        <input type="file" id="fileInput">
+        <button id="uploadFile">⬆️ Upload</button>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <div id="fileList" class="file-list">
+            <p>No files uploaded yet.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("uploadFile").addEventListener("click", function() {
+            let fileInput = document.getElementById("fileInput");
+            let fileList = document.getElementById("fileList");
+            let progressBar = document.getElementById("progress");
+
+            if (fileInput.files.length > 0) {
+                let file = fileInput.files[0];
+
+                // Simulated upload progress
+                progressBar.style.width = "0%";
+                let progress = 0;
+                let interval = setInterval(() => {
+                    progress += 10;
+                    progressBar.style.width = progress + "%";
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        let fileItem = document.createElement("div");
+                        fileItem.classList.add("file-item");
+                        fileItem.innerHTML = `<span>📄 ${file.name}</span>`;
+                        fileList.appendChild(fileItem);
+                        fileInput.value = ""; // Reset input
+                    }
+                }, 300);
+            }
+        });
+    </script>
+
+</body>
+</html>
