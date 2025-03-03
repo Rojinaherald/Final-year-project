@@ -24,46 +24,84 @@
         /* Feedback Container */
         .feedback-container {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             box-sizing: border-box;
         }
 
+        /* Title */
         .feedback-container h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 30px;
             color: #333;
             text-align: center;
+            font-weight: 600;
         }
 
         /* Feedback Section */
         #feedback-section {
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            max-height: 300px;
+            background: #f8f8f8;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            max-height: 400px;
             overflow-y: auto;
+            transition: all 0.3s ease;
         }
 
+        /* Feedback Paragraphs */
         #feedback-section p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #e9efff;
+            transition: background-color 0.3s ease;
+        }
+
+        #feedback-section p:hover {
+            background-color: #c2dfff;
         }
 
         #feedback-section p:last-child {
             margin-bottom: 0;
         }
 
-        /* Message if empty */
+        /* Empty Feedback Message */
         #feedback-section .no-feedback {
             font-style: italic;
             color: #888;
             text-align: center;
+            font-size: 18px;
+            padding: 15px;
+            border: 1px dashed #888;
+            border-radius: 6px;
+            background-color: #f0f0f0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 25px;
+                width: 90%;
+            }
+
+            .feedback-container h1 {
+                font-size: 28px;
+            }
+
+            #feedback-section {
+                max-height: 300px;
+            }
+
+            #feedback-section p {
+                font-size: 16px;
+            }
         }
 
     </style>

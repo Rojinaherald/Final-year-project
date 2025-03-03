@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Presentations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scheduling-container">
+        <h1>Schedule Presentations</h1>
+        <form action="#" method="POST">
+            <label for="project_name">Select Project:</label>
+            <select id="project_name" name="project_name" required>
+                <option value="project1">Project 1</option>
+                <option value="project2">Project 2</option>
+                <!-- Add more project options dynamically -->
+            </select>
+
+            <label for="presentation_time">Select Presentation Time:</label>
+            <input type="datetime-local" id="presentation_time" name="presentation_time" required>
+
+            <label for="presentation_venue">Select Presentation Venue:</label>
+            <input type="text" id="presentation_venue" name="presentation_venue" placeholder="Enter venue" required>
+
+            <button type="submit">Confirm Schedule</button>
+        </form>
+    </div>
+</body>
+</html>
