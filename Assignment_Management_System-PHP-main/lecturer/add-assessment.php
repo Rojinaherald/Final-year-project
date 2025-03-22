@@ -23,7 +23,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<title></title>
 </head>
-<body onload="SetDate();" style="background-color:lightgreen">
+<body onload="SetDate();" style="background-color:lightblue">
 	<?php 
 	if (isset($_GET['id'])) {
 		$module = mysqli_real_escape_string($conn, $_GET['id']);
