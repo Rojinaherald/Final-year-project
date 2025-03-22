@@ -14,7 +14,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script> 
 		<title>Home</title>
 	</head>
-	<body style="background-color:lightgreen;">
+	<body style="background-color:lightblue;">
 	<br><br><br><br><br>
 		<div class="container">
 			<div class="wrapper">
