@@ -28,7 +28,7 @@
         ?>
 </ul>
 
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-left">
     
         <?php
         if(isset($_SESSION['id'])) {
