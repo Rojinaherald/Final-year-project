@@ -32,7 +32,7 @@
 <head>
 	<title></title>
 </head>
-<body style="background-color:lightred">
+<body style="background-color:lightblue">
 	<div id="wrapper">
 		<div id="page-wrapper">
 			<div class="container-fluid">
