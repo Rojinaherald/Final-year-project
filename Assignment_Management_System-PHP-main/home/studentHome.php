@@ -39,6 +39,8 @@
 				<h3>Aseessment </h3>
 				<button type="button" class="btn btn-primary"><a href="../student/view-assessments.php">View Assessments</a></button>
 				<button type="button" class="btn btn-danger"><a href="../student/submit.php">submit-assessment</a></button>
+				<button type="button" class="btn btn-primary"><a href="../student/messaging.php">Send Messages</a></button>
+
 			</div>
 			<div class="col-md-6">
 				<h3>Modules </h3>

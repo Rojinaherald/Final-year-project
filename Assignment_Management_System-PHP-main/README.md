@@ -3,3 +3,7 @@
  project.sql 
 # Assignment_Management_Sytem-PHP
 Put this folder inside xampp/httpd and go to localhost/assignmentManagementSystem
+
+
+patil - lecturer
+ravi - supervisor

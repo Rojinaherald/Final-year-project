@@ -109,8 +109,32 @@ INSERT INTO `lecturers` (`id`, `lecturer_id`, `student_id`, `module_code`, `modu
 (15, 's', 'u1407170', '567', 'Statistics');
 
 -- --------------------------------------------------------
+-- Table structure for table `messages`
+-- Table structure for table `messages`
+CREATE TABLE `messages` (
+  `message_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_id` varchar(8) NOT NULL,
+  `receiver_id` varchar(8) NOT NULL,
+  `message_content` text NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp(),
+  `is_read` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`message_id`),
+  KEY `sender_id` (`sender_id`),
+  KEY `receiver_id` (`receiver_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+--
 
 --
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_id`, `sender_id`, `receiver_id`, `message_content`, `timestamp`, `is_read`) VALUES
+(1, 'u1407170', 's1', 'Hello, I need help with the assignment.', '2023-10-01 10:00:00', 0),
+(2, 's1', 'u1407170', 'Sure, let me know your questions.', '2023-10-01 10:05:00', 0),
+(3, 'u1309254', 's', 'Can you explain the marking scheme?', '2023-10-02 14:30:00', 0),
+(4, 's', 'u1309254', 'Yes, I will send you the details.', '2023-10-02 14:35:00', 0),
+(5, 'u1123', 's', 'When is the next lecture?', '2023-10-03 09:15:00', 0),
+(6, 's', 'u1123', 'The next lecture is on Friday at 10 AM.', '2023-10-03 09:20:00', 0);
 -- Table structure for table `marking_scheme`
 --
 

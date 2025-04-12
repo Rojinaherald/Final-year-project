@@ -1,8 +1,19 @@
 <!DOCTYPE html>
-<html>	
+<html>
+
+<?php 
+if (file_exists("message-notification.php")) {
+	include("message-notification.php");
+} 
+?>
+
+
+
+	
 	<?php 
 		include "../includes/admin-navbar.php";
 		include "../db_handler.php"; 
+		
 	?>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +61,8 @@
 				<button type="button" class="btn btn-warning"><a href="../admin/view-students.php">View Students</a></button>
 				<button type="button" class="btn btn-info"><a href="../admin/view-lecturers.php">View Lecturers</a></button>
 				<button type="button" class="btn btn-danger"><a href="../admin/add-user.php">Add User</a></button>
+				<button type="button" class="btn btn-primary"><a href="../admin/messaging.php">Messaging User</a></button>
+
 			</div>	
 		</div>
 		<hr>

@@ -68,6 +68,8 @@
 				
 				<button type="button" class="btn btn-info"><a href="../lecturer/view-students.php">View Students</a></button>
 				<button type="button" class="btn btn-primary" style="background-color: purple;"><a href="../lecturer/view-lecturers.php">View Lecturers</a></button>
+                <button type="button" class="btn btn-info"><a href="../lecturer/messaging.php">View Messages</a></button>
+
             </div>
 		<br><br>
 		

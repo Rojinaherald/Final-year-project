@@ -129,39 +129,45 @@
 
 <?php 
 	if(isset($_POST['submit'])) {
-
-		$uid = mysqli_insert_id($conn);
+		// Generate a unique ID for the user
+		$uniqueId = uniqid('U', true); 
+		$uid = substr(str_replace('.', '', $uniqueId), 0, 8); // Ensure it's 8 chars or less
+		
 		$name1 = mysqli_real_escape_string($conn, $_REQUEST['name']);
 		$sname1 = mysqli_real_escape_string($conn, $_REQUEST['sname']);
 		$email1 = mysqli_real_escape_string($conn, $_REQUEST['email']);
-		$username1 = mysqli_real_escape_string($conn, $_REQUEST['email']);
+		
+		// Create a username that's 10 characters or less from the email
+		$emailParts = explode('@', $_REQUEST['email']);
+		$username1 = substr($emailParts[0], 0, 10);
+		$username1 = mysqli_real_escape_string($conn, $username1);
+		
 		$password1 = mysqli_real_escape_string($conn, $_REQUEST['password']);
 		$rank1 = mysqli_real_escape_string($conn, $_REQUEST['rank']);
 		
 		if($rank1 == 'one') {
 			$level1 = mysqli_real_escape_string($conn, $_REQUEST['level']);
-		}
-
-		else { 
+		} else { 
 			$level1 = "0";
 		}
 
 		if($rank1 == 'one') {
-			$query = "INSERT INTO users (id, name, surname, email, username, password, rank, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'student', '" . $level1 . "')";
+			$query = "INSERT INTO users (id, name, surname, email, username, password, `rank`, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'student', '" . $level1 . "')";
 		}
 
 		if($rank1 == 'two') {
-			$query = "INSERT INTO users (id, name, surname, email, username, password, rank, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'lecturer', '0')";
+			$query = "INSERT INTO users (id, name, surname, email, username, password, `rank`, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'lecturer', '0')";
 		}
 
 		if($rank1 == 'three') {
-			$query = "INSERT INTO users (id, name, surname, email, username, password, rank, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'admin', '0')";
+			$query = "INSERT INTO users (id, name, surname, email, username, password, `rank`, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'admin', '0')";
 		}
+		
 		if($rank1 == 'four') {
-			$query = "INSERT INTO users (id, name, surname, email, username, password, rank, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'supervisor', '0')";
+			$query = "INSERT INTO users (id, name, surname, email, username, password, `rank`, level) VALUES ('" . $uid . "', '" . $name1 . "', '" . $sname1 . "', '" . $email1 . "', '" . $username1 . "', '" . $password1 . "', 'supervisor', '0')";
 		}
 
-		$result= mysqli_query($conn, $query) or die(mysqli_error($conn));
+		$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		mysqli_close($conn);
 		
 		echo '<script type="text/javascript">','YNconfirm();','</script>';

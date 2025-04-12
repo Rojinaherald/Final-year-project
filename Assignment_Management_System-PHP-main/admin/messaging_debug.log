@@ -1,0 +1,58 @@
+[2025-04-12 19:04:20] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-04-12 19:04:20] POST data: Array
+(
+)
+
+[2025-04-12 19:04:20] Current user ID: admin, Rank: Admin
+[2025-04-12 19:04:20] User query successful, found 12 users
+[2025-04-12 19:04:21] Found 6 total messages in the system
+[2025-04-12 19:04:51] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-04-12 19:04:51] POST data: Array
+(
+)
+
+[2025-04-12 19:04:51] Current user ID: admin, Rank: Admin
+[2025-04-12 19:04:51] User query successful, found 12 users
+[2025-04-12 19:04:51] Found 6 total messages in the system
+[2025-04-12 19:05:14] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-04-12 19:05:14] POST data: Array
+(
+    [message] => I won't be able to attend next lecture
+    [send_message] => 
+)
+
+[2025-04-12 19:05:14] Current user ID: admin, Rank: Admin
+[2025-04-12 19:05:14] User query successful, found 12 users
+[2025-04-12 19:05:14] Attempting to send group message: From: admin, Content: I won't be able to attend next lecture
+[2025-04-12 19:05:14] Insert statement prepared successfully
+[2025-04-12 19:05:14] sender_id: string = admin (length: 5)
+[2025-04-12 19:05:14] message_content: string = I won't be able to attend next lecture
+[2025-04-12 19:05:14] Message inserted successfully with ID: 7
+[2025-04-12 19:05:14] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-04-12 19:05:14] POST data: Array
+(
+)
+
+[2025-04-12 19:05:14] Current user ID: admin, Rank: Admin
+[2025-04-12 19:05:14] User query successful, found 12 users
+[2025-04-12 19:05:14] Found 7 total messages in the system

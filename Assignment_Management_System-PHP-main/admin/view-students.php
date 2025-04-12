@@ -39,8 +39,8 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM users WHERE rank = 'student'"; 
-                        $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                        $sql = "SELECT * FROM users ORDER BY name asc";
+                        $result = mysqli_query($conn, $sql) or die("Error in SQL query: " . mysqli_error($conn));
 
                       
                         $output = '';
@@ -59,10 +59,10 @@
                         else
                         {
 
-                          $query = "SELECT * FROM users WHERE rank='student' ORDER BY name asc";
+                            $query = "SELECT * FROM users WHERE `rank`='student' ORDER BY name asc";
                         }
 
-                        $result = mysqli_query($conn, $query);
+                        $result = mysqli_query($conn, $query) or die("Error in SQL query: " . mysqli_error($conn));
                         if(mysqli_num_rows($result) > 0)
                         {
 
@@ -121,12 +121,11 @@
 <?php 
    if(isset($_POST["export"])){
      
-      $result = "SELECT * FROM users WHERE rank = 'student'";
-      $row = mysqli_query($conn, $result) or die(mysqli_error($conn));
+    $result = mysqli_query($conn, "SELECT * FROM users") or die(mysqli_error($conn));
 
       $fp = fopen('../spreadsheets/students.csv', 'w');
 
-      while($val = mysqli_fetch_array($row, MYSQLI_ASSOC)){
+      while($val = mysqli_fetch_array($result, MYSQLI_ASSOC)){
           fputcsv($fp, $val);
       }
       fclose($fp); 

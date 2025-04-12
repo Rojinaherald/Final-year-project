@@ -1,0 +1,13 @@
+[2025-04-12 19:06:01] Session data: Array
+(
+    [id] => Anuradha
+    [rank] => Lecturer
+)
+
+[2025-04-12 19:06:01] POST data: Array
+(
+)
+
+[2025-04-12 19:06:01] Current user ID: Anuradha, Rank: Lecturer
+[2025-04-12 19:06:01] User query successful, found 12 users
+[2025-04-12 19:06:01] Found 7 total messages in the system

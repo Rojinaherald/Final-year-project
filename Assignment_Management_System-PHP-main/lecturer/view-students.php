@@ -40,7 +40,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM users WHERE rank = 'student'"; 
+                        $sql = "SELECT * FROM users WHERE `rank` = 'student'"; 
                         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                       
@@ -60,7 +60,7 @@
                         else
                         {
 
-                          $query = "SELECT * FROM users WHERE rank='student' ORDER BY name asc";
+                            $query = "SELECT * FROM users WHERE `rank`='student' ORDER BY name asc";
                         }
 
                         $result = mysqli_query($conn, $query);

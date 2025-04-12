@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM users WHERE rank = 'lecturer'"; 
+                        $sql = "SELECT * FROM users WHERE `rank` = 'lecturer'"; 
                         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                       
@@ -53,7 +53,7 @@
                         }
                         else
                         {
-                          $query = "SELECT * FROM users WHERE rank='lecturer' ORDER BY name asc";
+                          $query = "SELECT * FROM users WHERE `rank`='lecturer' ORDER BY name asc";
                         }
 
                         $result = mysqli_query($conn, $query);
@@ -113,7 +113,7 @@
 <?php 
    if(isset($_POST["export"])){
      
-      $result = "SELECT * FROM users WHERE rank = 'lecturer'";
+      $result = "SELECT * FROM users WHERE `rank` = 'lecturer'";
       $row = mysqli_query($conn, $result) or die(mysqli_error($conn));
 
       $fp = fopen('../spreadsheets/lecturers.csv', 'w');

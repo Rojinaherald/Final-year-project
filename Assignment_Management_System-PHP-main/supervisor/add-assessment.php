@@ -19,15 +19,19 @@
 	<?php 
 	if (isset($_GET['id'])) {
 		$module = mysqli_real_escape_string($conn, $_GET['id']);
-
-		$sql = "SELECT * FROM module WHERE module_code = '$module'"; 
-		$result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+		$sql = "SELECT * FROM module WHERE module_code = '$module'";
+		$result = mysqli_query($conn, $sql);
 	
-        while($row = mysqli_fetch_array($result)) { 
-        	$mcode = $row['module_code'];
-        	$mname = $row['module_name'];
+		if (!$result) {
+			die("Query failed: " . mysqli_error($conn));
+		}
+	
+		while ($row = mysqli_fetch_array($result)) {
+			$mcode = $row['module_code'];
+			$mname = $row['module_name'];
 		}
 	}
+	
 	?>
 	<div id="wrapper">
 		<div id="page-wrapper">
@@ -50,31 +54,40 @@
 						
 						if($a1 != "") {
 							$get = "SELECT DISTINCT weighs FROM assessment WHERE assessment_code = '$a1'";
-
 							$got = mysqli_query($conn, $get);
-
-							while ($row1 = mysqli_fetch_array($got)) {
-								$a1weight = $row1['weighs'];
+							if ($got === false) {
+								$a1weight = "";
+							} else {
+								$a1weight = "";
+								while ($row1 = mysqli_fetch_array($got)) {
+									$a1weight = $row1['weighs'];
+								}
 							}
 						}
-
+						
 						if($a2 != "") {
 							$recieve = "SELECT DISTINCT weighs FROM assessment WHERE assessment_code = '$a2'";
-
 							$recieved = mysqli_query($conn, $recieve);
-
-							while ($row2 = mysqli_fetch_array($recieved)) {
-								$a2weight = $row2['weighs'];
+							if ($recieved === false) {
+								$a2weight = "";
+							} else {
+								$a2weight = "";
+								while ($row2 = mysqli_fetch_array($recieved)) {
+									$a2weight = $row2['weighs'];
+								}
 							}
 						}
-
+						
 						if($a3 != "") {
 							$go = "SELECT DISTINCT weighs FROM assessment WHERE assessment_code = '$a3'";
-
 							$stay = mysqli_query($conn, $go);
-
-							while ($row3 = mysqli_fetch_array($stay)) {
-								$a3weight = $row3['weighs'];
+							if ($stay === false) {
+								$a3weight = "";
+							} else {
+								$a3weight = "";
+								while ($row3 = mysqli_fetch_array($stay)) {
+									$a3weight = $row3['weighs'];
+								}
 							}
 						}
 
@@ -299,14 +312,17 @@
 							  		</script>
 				            	</div>
 					          </div>
-	  				          <?php
-				                $query = "SELECT name, surname FROM users WHERE rank = 'lecturer'";
-				                $result = mysqli_query($conn, $query);
-				                $options = "";
-				                while ($row = mysqli_fetch_array($result)) {
-				                    $options = $options . "<option value='$row[0]'>$row[0] $row[1]</option>";
-				                }
-			            	  ?>
+							  <?php
+$query = "SELECT name, surname FROM users WHERE `rank` = 'lecturer'";									$result = mysqli_query($conn, $query);
+									$options = "";
+									if ($result) {
+										while ($row = mysqli_fetch_array($result)) {
+											$options = $options . "<option value='$row[0]'>$row[0] $row[1]</option>";
+										}
+									} else {
+										echo "<div class='alert alert-danger'>Error: " . mysqli_error($conn) . "</div>";
+									}
+								  ?>
 			            	  <label class="col-lg-3 control-label"></label>
 			            	  <div class="col-lg-8">
 			            	  <br>

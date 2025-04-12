@@ -1,7 +1,7 @@
 <?php
 require_once('config.php');
 
-$conn = mysqli_connect(db_host, db_username, db_password, db_name);
+$conn = mysqli_connect('127.0.0.1', 'root', '', 'project');
 
 
 if (!$conn) {
