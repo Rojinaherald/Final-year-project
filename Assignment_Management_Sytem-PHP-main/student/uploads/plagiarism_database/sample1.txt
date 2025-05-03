@@ -1,0 +1,1 @@
+This is an example document that contains some content that might be plagiarized. The detection system should be able to identify similarities between documents and flag potential instances of plagiarism. Plagiarism is the practice of taking someone else's work or ideas and passing them off as one's own.
