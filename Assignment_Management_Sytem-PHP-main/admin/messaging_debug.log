@@ -1,0 +1,26 @@
+[2025-05-03 16:17:52] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-05-03 16:17:52] POST data: Array
+(
+)
+
+[2025-05-03 16:17:52] Current user ID: admin, Rank: Admin
+[2025-05-03 16:17:52] User query successful, found 11 users
+[2025-05-03 16:17:52] Found 6 total messages in the system
+[2025-05-03 16:24:58] Session data: Array
+(
+    [id] => admin
+    [rank] => Admin
+)
+
+[2025-05-03 16:24:58] POST data: Array
+(
+)
+
+[2025-05-03 16:24:58] Current user ID: admin, Rank: Admin
+[2025-05-03 16:24:58] User query successful, found 12 users
+[2025-05-03 16:24:58] Found 6 total messages in the system
