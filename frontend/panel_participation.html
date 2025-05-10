@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Participation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panel-container">
+        <h1>Panel Participation</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Project Title</th>
+                    <th>Session Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>AI Traffic Management</td>
+                    <td>10:00 AM</td>
+                    <td><button>Join Session</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Blockchain Security</td>
+                    <td>11:00 AM</td>
+                    <td><button>Join Session</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="submit_panel_feedback.html" method="POST">
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback..." required></textarea>
+
+            <label for="grades">Grades:</label>
+            <input type="number" id="grades" name="grades" min="0" max="100" placeholder="Enter grades" required>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

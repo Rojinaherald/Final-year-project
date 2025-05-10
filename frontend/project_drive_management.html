@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Project Drives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="drive-management-container">
+        <h1>Manage Project Drives</h1>
+        <form action="#" method="POST">
+            <label for="drive_name">Project Drive Name:</label>
+            <input type="text" id="drive_name" name="drive_name" placeholder="Enter project drive name" required>
+
+            <label for="students">Add Students:</label>
+            <select id="students" name="students" multiple required>
+                <option value="student1">Student 1</option>
+                <option value="student2">Student 2</option>
+                <!-- Add more student options dynamically -->
+            </select>
+
+            <label for="teacher_guides">Assign Teacher Guides:</label>
+            <select id="teacher_guides" name="teacher_guides" multiple required>
+                <option value="guide1">Teacher Guide 1</option>
+                <option value="guide2">Teacher Guide 2</option>
+                <!-- Add more teacher guides options -->
+            </select>
+
+            <button type="submit">Create Drive</button>
+        </form>
+    </div>
+</body>
+</html>
